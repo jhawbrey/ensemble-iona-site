@@ -39,18 +39,18 @@ const Navbar = () => {
                 re-write that makes this unneccesary.
              */}
           <li className="navbar-item" style={{ padding: "0px" }}>
+            <Link className="navbar-item" to="/concerts">
+              Concerts
+            </Link>
+          </li>
+          <li className="navbar-item" style={{ padding: "0px" }}>
             <Link className="navbar-item" to="/about">
               About
             </Link>
           </li>
           <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/artists">
-              Artists
-            </Link>
-          </li>
-          <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/concerts">
-              Concerts
+            <Link className="navbar-item" to="/media">
+              Media
             </Link>
           </li>
           <li className="navbar-item" style={{ padding: "0px" }}>
@@ -59,8 +59,8 @@ const Navbar = () => {
             </Link>
           </li>
           <li className="navbar-item" style={{ padding: "0px" }}>
-            <Link className="navbar-item" to="/contact/examples">
-              Form Examples
+            <Link className="navbar-item" to="/give">
+              Give
             </Link>
           </li>
           <li className="navbar-end has-text-centered">

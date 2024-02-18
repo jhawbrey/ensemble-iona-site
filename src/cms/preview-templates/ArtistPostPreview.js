@@ -9,7 +9,7 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
       content={widgetFor("body")}
       description={entry.getIn(["data", "description"])}
       tags={tags && tags.toJS()}
-      title={entry.getIn(["data", "title"])}
+      name={entry.getIn(["data", "name"])}
     />
   );
 };

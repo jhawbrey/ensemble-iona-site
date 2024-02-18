@@ -22,7 +22,7 @@ const ArtistRollTemplate = (props) => {
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                        alt: `featured image thumbnail for post ${post.frontmatter.name}, ${post.frontmatter.voice}`,
                         width:
                           post.frontmatter.featuredimage.childImageSharp
                             .gatsbyImageData.width,
@@ -38,22 +38,10 @@ const ArtistRollTemplate = (props) => {
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
                   >
-                    {post.frontmatter.title}
+                    {post.frontmatter.name}, {post.frontmatter.voice}
                   </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
                 </p>
               </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Details →
-                </Link>
-              </p>
             </article>
           </div>
         ))}
@@ -86,9 +74,9 @@ export default function ArtistRoll() {
                   slug
                 }
                 frontmatter {
-                  title
+                  name
+                  voice
                   templateKey
-                  date(formatString: "MMMM DD, YYYY")
                   featuredpost
                   featuredimage {
                     childImageSharp {

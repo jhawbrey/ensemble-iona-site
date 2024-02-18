@@ -11,10 +11,21 @@ mainpitch:
     shouldn't just taste good, it should do good too. We source all of our beans
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a
+  enim at augue rhoncus interdum. Nulla vulputate eleifend ligula, congue
+  aliquet nibh laoreet ut. Mauris at ex non libero consequat auctor. Aenean
+  vestibulum lectus nec odio sollicitudin, ut commodo leo venenatis. Sed dui mi,
+  sagittis non dolor sed, scelerisque sollicitudin est. Fusce lacinia vehicula
+  leo. Donec nisi quam, vestibulum vitae massa non, maximus viverra nisl. Ut et
+  finibus lorem. Praesent lorem felis, luctus at pretium eget, elementum eu
+  dolor. Aliquam consectetur sagittis lorem, ac scelerisque tellus faucibus
+  ac.  Nullam eu quam sed erat elementum interdum non sit amet sapien. Praesent
+  et arcu ligula. Sed magna ante, venenatis non turpis in, lacinia commodo
+  velit. Donec tincidunt, sapien ac tincidunt dapibus, mi mi interdum nunc, eget
+  eleifend ligula eros vitae velit. Nam iaculis eleifend diam vitae iaculis.
+  Nulla non pharetra lectus. Proin a lobortis purus. Aliquam quis pretium
+  libero. Nam mollis elit massa, quis tempus mi maximus vitae. Integer quis
+  velit elementum, cursus odio sed, consequat massa.
 intro:
   blurbs:
     - image: /img/coffee.png

@@ -12,8 +12,10 @@ export const ArtistPostTemplate = ({
   contentComponent,
   description,
   tags,
-  title,
+  name,
+  voice,
   helmet,
+  image,
 }) => {
   const PostContent = contentComponent || Content;
 
@@ -24,7 +26,7 @@ export const ArtistPostTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
+              {name} - {voice}
             </h1>
             <p>{description}</p>
             <PostContent content={content} />
@@ -51,7 +53,8 @@ ArtistPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
-  title: PropTypes.string,
+  name: PropTypes.string,
+  voice: PropTypes.string,
   helmet: PropTypes.object,
 };
 
@@ -63,18 +66,19 @@ const ArtistPost = ({ data }) => {
       <ArtistPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.description}
+        description={post.frontmatter.name}
         helmet={
           <Helmet titleTemplate="%s | Artist">
-            <title>{`${post.frontmatter.title}`}</title>
+            <title>{`${post.frontmatter.name} - ${post.frontmatter.voice}`}</title>
             <meta
               name="description"
-              content={`${post.frontmatter.description}`}
+              content={`${post.frontmatter.name} - ${post.frontmatter.voice}`}
             />
           </Helmet>
         }
         tags={post.frontmatter.tags}
-        title={post.frontmatter.title}
+        name={post.frontmatter.name}
+        voice={post.frontmatter.voice}
       />
     </Layout>
   );
@@ -95,8 +99,8 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        title
-        description
+        name
+        voice
         tags
       }
     }
