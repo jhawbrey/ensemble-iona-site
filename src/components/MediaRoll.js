@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Link, graphql, StaticQuery } from "gatsby";
 import PreviewCompatibleImage from "./PreviewCompatibleImage";
 
-const ArtistRollTemplate = (props) => {
+const MediaRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
 
   return (
@@ -12,7 +12,7 @@ const ArtistRollTemplate = (props) => {
         posts.map(({ node: post }) => (
           <div className="is-parent column is-6" key={post.id}>
             <article
-              className={`Artist-list-item tile is-child box notification ${
+              className={`concert-list-item tile is-child box notification ${
                 post.frontmatter.featuredpost ? "is-featured" : ""
               }`}
             >
@@ -22,7 +22,7 @@ const ArtistRollTemplate = (props) => {
                     <PreviewCompatibleImage
                       imageInfo={{
                         image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.name}, ${post.frontmatter.voice}`,
+                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         width:
                           post.frontmatter.featuredimage.childImageSharp
                             .gatsbyImageData.width,
@@ -33,17 +33,27 @@ const ArtistRollTemplate = (props) => {
                     />
                   </div>
                 )}
-                <h2 className="post-meta">
+                <p className="post-meta">
                   <Link
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
                   >
-                    {post.frontmatter.name}
-                    <br />
-                    {post.frontmatter.voice}
+                    {post.frontmatter.title}
                   </Link>
-                </h2>
+                  <span> &bull; </span>
+                  <span className="subtitle is-size-5 is-block">
+                    {post.frontmatter.date}
+                  </span>
+                </p>
               </header>
+              <p>
+                {post.excerpt}
+                <br />
+                <br />
+                <Link className="button" to={post.fields.slug}>
+                  Details →
+                </Link>
+              </p>
             </article>
           </div>
         ))}
@@ -51,7 +61,7 @@ const ArtistRollTemplate = (props) => {
   );
 };
 
-ArtistRoll.propTypes = {
+MediaRoll.propTypes = {
   data: PropTypes.shape({
     allMarkdownRemark: PropTypes.shape({
       edges: PropTypes.array,
@@ -59,14 +69,14 @@ ArtistRoll.propTypes = {
   }),
 };
 
-export default function ArtistRoll() {
+export default function MediaRoll() {
   return (
     <StaticQuery
       query={graphql`
-        query ArtistRollQuery {
+        query MediaRollQuery {
           allMarkdownRemark(
             sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "artist-post" } } }
+            filter: { frontmatter: { templateKey: { eq: "media-post" } } }
           ) {
             edges {
               node {
@@ -76,9 +86,9 @@ export default function ArtistRoll() {
                   slug
                 }
                 frontmatter {
-                  name
-                  voice
+                  title
                   templateKey
+                  date(formatString: "MMMM DD, YYYY")
                   featuredpost
                   featuredimage {
                     childImageSharp {
@@ -95,7 +105,7 @@ export default function ArtistRoll() {
           }
         }
       `}
-      render={(data, count) => <ArtistRollTemplate data={data} count={count} />}
+      render={(data, count) => <MediaRollTemplate data={data} count={count} />}
     />
   );
 }
