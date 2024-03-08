@@ -33,18 +33,18 @@ const ConcertRollTemplate = (props) => {
                     />
                   </div>
                 )}
-                <p className="post-meta">
+                <h2 className="post-meta">
                   <Link
                     className="title has-text-primary is-size-4"
                     to={post.fields.slug}
                   >
                     {post.frontmatter.title}
                   </Link>
-                  <span> &bull; </span>
+                  <br />
                   <span className="subtitle is-size-5 is-block">
                     {post.frontmatter.date}
                   </span>
-                </p>
+                </h2>
               </header>
               <p>
                 {post.excerpt}
