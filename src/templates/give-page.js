@@ -19,11 +19,6 @@ export const GivePageTemplate = ({ title, content, contentComponent }) => {
               </h2>
               <PageContent className="content" content={content} />
             </div>
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                Give
-              </h2>
-            </div>
           </div>
         </div>
       </div>
