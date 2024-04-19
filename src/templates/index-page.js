@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
-import { getImage } from "gatsby-plugin-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
+import { getImage } from 'gatsby-plugin-image';
 
-import Layout from "../components/Layout";
-import Features from "../components/Features";
-import ConcertRoll from "../components/ConcertRoll";
-import FullWidthImage from "../components/FullWidthImage";
+import Layout from '../components/Layout';
+import Features from '../components/Features';
+import ConcertRoll from '../components/ConcertRoll';
+import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
 export const IndexPageTemplate = ({
@@ -21,7 +21,7 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} subheading={subheading} />
+      <FullWidthImage img={heroImage} />
       <section className="section section--gradient">
         <div className="container">
           <div className="section">
