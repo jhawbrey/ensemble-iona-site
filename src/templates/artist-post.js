@@ -1,10 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import { Helmet } from 'react-helmet';
+import { getImage } from 'gatsby-plugin-image';
+import FullWidthImage from '../components/FullWidthImage';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
 
 // eslint-disable-next-line
 export const ArtistPostTemplate = ({
@@ -16,36 +18,41 @@ export const ArtistPostTemplate = ({
   voice,
   helmet,
   image,
+  title,
 }) => {
   const PostContent = contentComponent || Content;
+  const heroImage = getImage(image) || image;
 
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {name} - {voice}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
+    <div>
+      <FullWidthImage img={heroImage} title={title} />
+      <section className="section">
+        {helmet || ''}
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-10 is-offset-1">
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {name} - {voice}
+              </h1>
+              <p>{description}</p>
+              <PostContent content={content} />
+              {tags && tags.length ? (
+                <div style={{ marginTop: `4rem` }}>
+                  <h4>Tags</h4>
+                  <ul className="taglist">
+                    {tags.map((tag) => (
+                      <li key={tag + `tag`}>
+                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   );
 };
 

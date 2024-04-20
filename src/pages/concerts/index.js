@@ -1,7 +1,8 @@
-import * as React from "react";
+import * as React from 'react';
 
-import Layout from "../../components/Layout";
-import ConcertRoll from "../../components/ConcertRoll";
+import Layout from '../../components/Layout';
+import ConcertRoll from '../../components/ConcertRoll';
+import FullWidthImage from '../../components/FullWidthImage';
 
 export default class ConcertIndexPage extends React.Component {
   render() {
@@ -16,10 +17,10 @@ export default class ConcertIndexPage extends React.Component {
           <h1
             className="has-text-weight-bold is-size-1"
             style={{
-              boxShadow: "0.5rem 0 0 #000, -0.5rem 0 0 #000",
-              backgroundColor: "#000",
-              color: "white",
-              padding: "1rem",
+              boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
+              backgroundColor: '#000',
+              color: 'white',
+              padding: '1rem',
             }}
           >
             Concerts
