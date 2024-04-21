@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql, StaticQuery } from "gatsby";
-import PreviewCompatibleImage from "./PreviewCompatibleImage";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, graphql, StaticQuery } from 'gatsby';
+import PreviewCompatibleImage from './PreviewCompatibleImage';
 
 const ConcertRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
@@ -12,9 +12,7 @@ const ConcertRollTemplate = (props) => {
         posts.map(({ node: post }) => (
           <div className="is-parent column is-6" key={post.id}>
             <article
-              className={`concert-list-item tile is-child box notification ${
-                post.frontmatter.featuredpost ? "is-featured" : ""
-              }`}
+              className={`concert-list-item tile is-child box notification`}
             >
               <header>
                 {post?.frontmatter?.featuredimage && (
@@ -89,7 +87,6 @@ export default function ConcertRoll() {
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
-                  featuredpost
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(

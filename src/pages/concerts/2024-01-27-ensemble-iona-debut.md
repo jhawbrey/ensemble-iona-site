@@ -8,7 +8,7 @@ address: 2700 McPherson Ave, Fort Worth, TX 76109
 description: " "
 featuredconcert: true
 image: /img/rehearsal1.jpg
-featuredimage: /img/ffef080aff06207550581ec2255158ad105892a52a3d41d5e1102c46d7a0b1f7-rimg-w960-h584-gmir.webp
+featuredimage: /img/iona-singers.jpeg
 tags:
   - 23-24season
 ---
