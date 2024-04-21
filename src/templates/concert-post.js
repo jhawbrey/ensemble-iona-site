@@ -1,56 +1,74 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { kebabCase } from "lodash";
-import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { kebabCase } from 'lodash';
+import { Helmet } from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Layout from '../components/Layout';
+import Content, { HTMLContent } from '../components/Content';
+import { getImage } from 'gatsby-plugin-image';
+import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
 export const ConcertPostTemplate = ({
   content,
+  image,
   contentComponent,
   description,
-  tags,
   title,
+  date,
+  time,
+  venue,
+  address,
   helmet,
 }) => {
   const PostContent = contentComponent || Content;
+  const heroImage = getImage(image) || image;
 
   return (
-    <section className="section">
-      {helmet || ""}
-      <div className="container content">
+    <div>
+      <FullWidthImage img={heroImage} />
+      <section className="section">
+        {helmet || ''}
+
         <div className="columns">
-          <div className="column is-10 is-offset-1">
+          <div className="column is-6 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
               {title}
             </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
           </div>
         </div>
-      </div>
-    </section>
+        <div className="container content">
+          <div className="columns">
+            <div className="column is-6 is-offset-1">
+              <p>{description}</p>
+              <PostContent content={content} />
+            </div>
+            <div className="column is-4 is-offset-1">
+              <p>
+                {date} - {time}
+                <br />
+                {venue}
+                <br />
+                {address}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 };
 
 ConcertPostTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
   description: PropTypes.string,
+  tags: PropTypes.array,
+  address: PropTypes.string,
+  date: PropTypes.string,
+  time: PropTypes.string,
+  venue: PropTypes.string,
   title: PropTypes.string,
   helmet: PropTypes.object,
 };
@@ -61,6 +79,7 @@ const ConcertPost = ({ data }) => {
   return (
     <Layout>
       <ConcertPostTemplate
+        image={post.frontmatter.image}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -73,7 +92,10 @@ const ConcertPost = ({ data }) => {
             />
           </Helmet>
         }
-        tags={post.frontmatter.tags}
+        address={post.frontmatter.address}
+        date={post.frontmatter.date}
+        time={post.frontmatter.time}
+        venue={post.frontmatter.venue}
         title={post.frontmatter.title}
       />
     </Layout>
@@ -95,9 +117,16 @@ export const pageQuery = graphql`
       html
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
+        time
+        venue
+        address
         title
         description
-        tags
+        image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
