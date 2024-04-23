@@ -2,7 +2,6 @@ import * as React from 'react';
 
 import Layout from '../../components/Layout';
 import ConcertRoll from '../../components/ConcertRoll';
-import FullWidthImage from '../../components/FullWidthImage';
 
 export default class ConcertIndexPage extends React.Component {
   render() {
@@ -11,7 +10,7 @@ export default class ConcertIndexPage extends React.Component {
         <div
           className="full-width-image-container margin-top-0"
           style={{
-            backgroundImage: `url('/img/blog-index.jpg')`,
+            backgroundImage: `url('/img/hero-banner-1.jpg')`,
           }}
         >
           <h1

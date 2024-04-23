@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: Ensemble Iona
-image: /img/iona-singers.jpeg
+image: /img/hero-banner-4.jpg
 heading: Ensemble Iona
 subheading: Fort Worth's Premiere Vocal Ensemble
 mainpitch:

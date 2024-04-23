@@ -5,7 +5,6 @@ import Layout from '../components/Layout';
 import { getImage } from 'gatsby-plugin-image';
 import Content, { HTMLContent } from '../components/Content';
 import ArtistRoll from '../components/ArtistRoll';
-import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
 export const AboutPageTemplate = ({
@@ -15,11 +14,27 @@ export const AboutPageTemplate = ({
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
-  const heroImage = getImage(image) || image;
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} />
+      <div
+        className="full-width-image-container margin-top-0"
+        style={{
+          backgroundImage: `url('/img/hero-banner-2.jpg')`,
+        }}
+      >
+        <h1
+          className="has-text-weight-bold is-size-1"
+          style={{
+            boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
+            backgroundColor: '#000',
+            color: 'white',
+            padding: '1rem',
+          }}
+        >
+          About
+        </h1>
+      </div>
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
