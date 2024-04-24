@@ -10,27 +10,27 @@ const ConcertRollTemplate = (props) => {
     <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
+          <div className="is-parent column is-12" key={post.id}>
             <article
-              className={`concert-list-item tile is-child box notification`}
+              className={`concert-list-item tile columns is-child box notification`}
             >
-              <header>
-                {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        width:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.width,
-                        height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
-                      }}
-                    />
-                  </div>
-                )}
+              {post?.frontmatter?.featuredimage && (
+                <div className="is-child column is-4 featured-thumbnail">
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                      width:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.width,
+                      height:
+                        post.frontmatter.featuredimage.childImageSharp
+                          .gatsbyImageData.height,
+                    }}
+                  />
+                </div>
+              )}
+              <div className="is-child column is-8">
                 <h2 className="post-meta">
                   <Link
                     className="title has-text-primary is-size-4"
@@ -40,18 +40,20 @@ const ConcertRollTemplate = (props) => {
                   </Link>
                   <br />
                   <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
+                    {post.frontmatter.date} - {post.frontmatter.time}
                   </span>
                 </h2>
-              </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Details →
-                </Link>
-              </p>
+                <p>
+                  {post.frontmatter.venue}
+                  <br />
+                  {post.frontmatter.address}
+                  <br />
+                  <br />
+                  <Link className="button" to={post.fields.slug}>
+                    More Info →
+                  </Link>
+                </p>
+              </div>
             </article>
           </div>
         ))}
@@ -84,13 +86,17 @@ export default function ConcertRoll() {
                   slug
                 }
                 frontmatter {
+                  date(formatString: "MMMM DD, YYYY")
+                  time
+                  venue
+                  address
                   title
                   templateKey
                   date(formatString: "MMMM DD, YYYY")
                   featuredimage {
                     childImageSharp {
                       gatsbyImageData(
-                        width: 120
+                        width: 300
                         quality: 100
                         layout: CONSTRAINED
                       )
