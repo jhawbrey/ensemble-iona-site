@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import { getImage } from 'gatsby-plugin-image';
 import FullWidthImage from '../components/FullWidthImage';
+import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 // eslint-disable-next-line
 export const ConcertPostTemplate = ({
@@ -20,13 +21,14 @@ export const ConcertPostTemplate = ({
   venue,
   address,
   helmet,
+  featuredimage,
 }) => {
   const PostContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
 
   return (
     <div>
-      <FullWidthImage img={heroImage} />
+      <FullWidthImage img={heroImage} title={title} />
       <section className="section">
         {helmet || ''}
 
@@ -41,6 +43,7 @@ export const ConcertPostTemplate = ({
           <div className="columns">
             <div className="column is-6 is-offset-1">
               <p>{description}</p>
+
               <PostContent content={content} />
             </div>
             <div className="column is-4 is-offset-1">
@@ -86,10 +89,6 @@ const ConcertPost = ({ data }) => {
         helmet={
           <Helmet titleTemplate="%s | Concert">
             <title>{`${post.frontmatter.title}`}</title>
-            <meta
-              name="description"
-              content={`${post.frontmatter.description}`}
-            />
           </Helmet>
         }
         address={post.frontmatter.address}
@@ -123,6 +122,11 @@ export const pageQuery = graphql`
         title
         description
         image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
+        featuredimage {
           childImageSharp {
             gatsbyImageData(quality: 100, layout: FULL_WIDTH)
           }
