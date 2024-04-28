@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
-import { getImage } from 'gatsby-plugin-image';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import FullWidthImage from '../components/FullWidthImage';
 import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
@@ -13,18 +13,18 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 export const ConcertPostTemplate = ({
   content,
   image,
+  featuredimage,
   contentComponent,
-  description,
   title,
   date,
   time,
   venue,
   address,
   helmet,
-  featuredimage,
 }) => {
   const PostContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
+  const contentImage = getImage(featuredimage) || featuredimage;
 
   return (
     <div>
@@ -32,19 +32,20 @@ export const ConcertPostTemplate = ({
       <section className="section">
         {helmet || ''}
 
-        <div className="columns">
-          <div className="column is-6 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-          </div>
-        </div>
         <div className="container content">
           <div className="columns">
             <div className="column is-6 is-offset-1">
-              <p>{description}</p>
-
-              <PostContent content={content} />
+              <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+                {title}
+              </h1>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column is-6 is-offset-1">
+              <GatsbyImage image={contentImage} alt={'test'} />
+              <div style={{ marginTop: `3rem` }}>
+                <PostContent content={content} />
+              </div>
             </div>
             <div className="column is-4 is-offset-1">
               <p>
@@ -64,9 +65,9 @@ export const ConcertPostTemplate = ({
 
 ConcertPostTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+  featuredimage: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   content: PropTypes.node.isRequired,
   contentComponent: PropTypes.func,
-  description: PropTypes.string,
   tags: PropTypes.array,
   address: PropTypes.string,
   date: PropTypes.string,
@@ -83,6 +84,7 @@ const ConcertPost = ({ data }) => {
     <Layout>
       <ConcertPostTemplate
         image={post.frontmatter.image}
+        featuredimage={post.frontmatter.featuredimage}
         content={post.html}
         contentComponent={HTMLContent}
         description={post.frontmatter.description}
@@ -128,7 +130,7 @@ export const pageQuery = graphql`
         }
         featuredimage {
           childImageSharp {
-            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+            gatsbyImageData(quality: 100, width: 660, layout: CONSTRAINED)
           }
         }
       }

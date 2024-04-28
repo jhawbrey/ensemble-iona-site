@@ -109,6 +109,11 @@ export const pageQuery = graphql`
         name
         voice
         tags
+        featuredimage {
+          childImageSharp {
+            gatsbyImageData(width: 120, quality: 100, layout: CONSTRAINED)
+          }
+        }
       }
     }
   }
