@@ -7,7 +7,6 @@ import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import FullWidthImage from '../components/FullWidthImage';
-import PreviewCompatibleImage from '../components/PreviewCompatibleImage';
 
 // eslint-disable-next-line
 export const ConcertPostTemplate = ({
@@ -40,6 +39,7 @@ export const ConcertPostTemplate = ({
               </h1>
             </div>
           </div>
+
           <div className="columns">
             <div className="column is-6 is-offset-1">
               <GatsbyImage image={contentImage} alt={'test'} />
