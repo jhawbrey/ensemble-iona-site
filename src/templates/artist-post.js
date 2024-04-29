@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import FullWidthImage from '../components/FullWidthImage';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -22,7 +21,6 @@ export const ArtistPostTemplate = ({
 }) => {
   const PostContent = contentComponent || Content;
   const heroImage = getImage(image) || image;
-  const contentImage = getImage(image) || image;
 
   return (
     <div>
@@ -30,11 +28,11 @@ export const ArtistPostTemplate = ({
         {helmet || ''}
         <div className="container content">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-6 is-offset-1">
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {name} - {voice}
+                {name}
+                <div className="is-size-3">{voice}</div>
               </h1>
-              <GatsbyImage image={contentImage} alt={'test'} />
               <PostContent content={content} />
               {tags && tags.length ? (
                 <div style={{ marginTop: `4rem` }}>
@@ -48,6 +46,13 @@ export const ArtistPostTemplate = ({
                   </ul>
                 </div>
               ) : null}
+            </div>
+            <div className="column is-4 is-offset-1">
+              <GatsbyImage
+                image={heroImage}
+                alt={title}
+                className="hero-image"
+              />
             </div>
           </div>
         </div>
@@ -95,7 +100,7 @@ const ArtistPost = ({ data }) => {
         image={post.frontmatter.image}
         helmet={
           <Helmet titleTemplate="%s | Artist">
-            <title>{`${post.frontmatter.name} - ${post.frontmatter.voice}`}</title>
+            <title>{`${post.frontmatter.name}<br />${post.frontmatter.voice}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.name} - ${post.frontmatter.voice}`}
