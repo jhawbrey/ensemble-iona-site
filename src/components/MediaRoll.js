@@ -9,26 +9,18 @@ const MediaRollTemplate = (props) => {
     <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-6" key={post.id}>
+          <div className="is-parent column is-12" key={post.id}>
             <article
               className={`media-list-item tile is-child box notification`}
             >
               <header>
                 <iframe
-                  width="560"
-                  height="315"
+                  className="video"
                   src={post.frontmatter.url}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerpolicy="strict-origin-when-cross-origin"
-                  allowfullscreen
-                ></iframe>
-                <iframe
-                  className="video"
-                  src={post.frontmatter.url}
-                  frameborder="0"
-                  allow="accelerometer; autoplay; encrypted-media; gyroscope;"
                   allowfullscreen
                 ></iframe>
               </header>
