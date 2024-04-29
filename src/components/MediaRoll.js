@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link, graphql, StaticQuery } from 'gatsby';
-import PreviewCompatibleImage from './PreviewCompatibleImage';
+import { graphql, StaticQuery } from 'gatsby';
 
 const MediaRollTemplate = (props) => {
   const { edges: posts } = props.data.allMarkdownRemark;
@@ -12,46 +11,27 @@ const MediaRollTemplate = (props) => {
         posts.map(({ node: post }) => (
           <div className="is-parent column is-6" key={post.id}>
             <article
-              className={`concert-list-item tile is-child box notification`}
+              className={`media-list-item tile is-child box notification`}
             >
               <header>
-                {post?.frontmatter?.featuredimage && (
-                  <div className="featured-thumbnail">
-                    <PreviewCompatibleImage
-                      imageInfo={{
-                        image: post.frontmatter.featuredimage,
-                        alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        width:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.width,
-                        height:
-                          post.frontmatter.featuredimage.childImageSharp
-                            .gatsbyImageData.height,
-                      }}
-                    />
-                  </div>
-                )}
-                <p className="post-meta">
-                  <Link
-                    className="title has-text-primary is-size-4"
-                    to={post.fields.slug}
-                  >
-                    {post.frontmatter.title}
-                  </Link>
-                  <span> &bull; </span>
-                  <span className="subtitle is-size-5 is-block">
-                    {post.frontmatter.date}
-                  </span>
-                </p>
+                <iframe
+                  width="560"
+                  height="315"
+                  src={post.frontmatter.url}
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <iframe
+                  className="video"
+                  src={post.frontmatter.url}
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope;"
+                  allowfullscreen
+                ></iframe>
               </header>
-              <p>
-                {post.excerpt}
-                <br />
-                <br />
-                <Link className="button" to={post.fields.slug}>
-                  Details →
-                </Link>
-              </p>
             </article>
           </div>
         ))}
@@ -80,22 +60,10 @@ export default function MediaRoll() {
               node {
                 excerpt(pruneLength: 400)
                 id
-                fields {
-                  slug
-                }
+
                 frontmatter {
-                  title
+                  url
                   templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
-                    }
-                  }
                 }
               }
             }
