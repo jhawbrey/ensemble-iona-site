@@ -31,7 +31,7 @@ export const ArtistPostTemplate = ({
             <div className="column is-6 is-offset-1">
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
                 {name}
-                <div className="is-size-3">{voice}</div>
+                <span className="subtitle is-size-5 is-block">{voice}</span>
               </h1>
               <PostContent content={content} />
               {tags && tags.length ? (
