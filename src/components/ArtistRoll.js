@@ -10,9 +10,9 @@ const ArtistRollTemplate = (props) => {
     <div className="columns is-multiline">
       {posts &&
         posts.map(({ node: post }) => (
-          <div className="is-parent column is-4" key={post.id}>
+          <div className="is-parent column is-6" key={post.id}>
             <article
-              className={`Artist-list-item tile is-child box notification`}
+              className={`artist-list-item tile is-child box notification`}
             >
               <header class="columns">
                 {post?.frontmatter?.featuredimage && (

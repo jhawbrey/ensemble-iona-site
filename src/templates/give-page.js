@@ -30,15 +30,13 @@ export const GivePageTemplate = ({ title, content, contentComponent }) => {
       </div>
       <section className="section section--gradient">
         <div className="container">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="section">
-                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  {title}
-                </h2>
-                <PageContent className="content" content={content} />
-              </div>
-            </div>
+          <div className="content">
+            <h1>Donate to Ensemble Iona</h1>
+            <article
+              className={`media-list-item tile is-child box notification`}
+            >
+              <PageContent className="content" content={content} />
+            </article>
           </div>
         </div>
       </section>
