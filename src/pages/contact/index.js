@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'gatsby';
 import { navigate } from 'gatsby-link';
 import Layout from '../../components/Layout';
 
@@ -57,7 +58,23 @@ export default class Index extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <h1>Contact</h1>
+              <h1>Inquries</h1>
+              <article
+                className={`media-list-item tile is-child box notification`}
+              >
+                <p>
+                  For questions about bookings, please contact{' '}
+                  <Link to="mailto:booking@ensembleiona.org">
+                    booking@ensembleiona.org
+                  </Link>
+                  .
+                </p>
+              </article>
+              <h1>Subscribe</h1>
+              <p>
+                Want to stay up to date with the latest news? Subscribe to our
+                newsletter and get all of the latest info!
+              </p>
               <form
                 name="contact"
                 method="post"
@@ -105,22 +122,8 @@ export default class Index extends React.Component {
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'message'}>
-                    Message
-                  </label>
-                  <div className="control">
-                    <textarea
-                      className="textarea"
-                      name={'message'}
-                      onChange={this.handleChange}
-                      id={'message'}
-                      required={true}
-                    />
-                  </div>
-                </div>
-                <div className="field">
                   <button className="button is-link" type="submit">
-                    Send
+                    Subscribe
                   </button>
                 </div>
               </form>
