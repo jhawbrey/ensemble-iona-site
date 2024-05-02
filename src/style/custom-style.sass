@@ -134,9 +134,13 @@ h1, h2,  h3, h4
   top: calc(50% + 10px)
 
 .navbar-brand
-  min-height: 6.25rem
+  min-height: 3rem
+  @media screen and (min-width: 1024px) 
+    min-height: 6.25rem
 .navbar-item img  
-  min-height: 2.75rem
+  min-height: 2rem
+  @media screen and (min-width: 1024px) 
+    min-height: 2.75rem
 .navbar-item .icon
   color: #fff
 // Override for use of svg's from https://simpleicons.org/
