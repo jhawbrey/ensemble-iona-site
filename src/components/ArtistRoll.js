@@ -59,38 +59,32 @@ ArtistRoll.propTypes = {
 export default function ArtistRoll() {
   return (
     <StaticQuery
-      query={graphql`
-        query ArtistRollQuery {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "artist-post" } } }
-          ) {
-            edges {
-              node {
-                excerpt(pruneLength: 400)
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  name
-                  voice
-                  templateKey
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 120
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
-                    }
-                  }
-                }
-              }
+      query={graphql`query ArtistRollQuery {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {templateKey: {eq: "artist-post"}}}
+  ) {
+    edges {
+      node {
+        excerpt(pruneLength: 400)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          name
+          voice
+          templateKey
+          featuredimage {
+            childImageSharp {
+              gatsbyImageData(width: 120, quality: 100, layout: CONSTRAINED)
             }
           }
         }
-      `}
+      }
+    }
+  }
+}`}
       render={(data, count) => <ArtistRollTemplate data={data} count={count} />}
     />
   );
