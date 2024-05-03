@@ -5342,10 +5342,12 @@ builtins@^5.0.0:
   dependencies:
     semver "^7.0.0"
 
-bulma@^0.9.0:
-  version "0.9.4"
-  resolved "https://registry.npmjs.org/bulma/-/bulma-0.9.4.tgz"
-  integrity sha512-86FlT5+1GrsgKbPLRRY7cGDg8fsJiP/jzTqXXVqiUZZ2aZT8uemEOHlU1CDU+TxklPEZ11HZNNWclRBBecP4CQ==
+bulma@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/bulma/-/bulma-1.0.0.tgz#95e8ffa4feb8d64aa1c54a4f0ac6da08e0260672"
+  integrity sha512-7n49v/gdHXaHcU9fVobqGXO2OguiCoMh6CLbeX7jq00XrZ5vOSE4LNS0S/0Q6rlBbckY6kk6W7LwqxS0nu4bug==
+  dependencies:
+    sass "^1.71.1"
 
 busboy@^1.0.0:
   version "1.6.0"
@@ -16251,7 +16253,7 @@ sass-loader@^10.4.1:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@^1.43.2:
+sass@^1.43.2, sass@^1.71.1:
   version "1.76.0"
   resolved "https://registry.npmjs.org/sass/-/sass-1.76.0.tgz"
   integrity sha512-nc3LeqvF2FNW5xGF1zxZifdW3ffIz5aBb7I7tSvOoNu7z1RQ6pFt9MBuiPtjgaI62YWrM/txjWlOCFiGtf2xpw==
