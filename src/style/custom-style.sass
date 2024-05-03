@@ -5,13 +5,37 @@ body
   background: #dcddd7
   color: #2a2e2f
 
-ul#navMenu .navbar-item 
-  font-family: arial, sans-serif !important
-  font-weight: bold
-  color: #fff
+ul#navMenu 
+  a.navbar-item 
+    font-weight: 400
+    color: #fff
+    font-family: "fjalla one"
+    text-transform: uppercase
+    padding: 0
+    margin: 0.4rem 0.6rem 0 0.6rem
+    border-bottom: 2px solid #000
+  a.navbar-item:hover 
+    border-bottom: 2px solid #fff
+    line-height: 1.4
+    @media screen and (max-width: 1023px)
+      color: #000 !important
+
 
 h1, h2,  h3, h4
   font-family: "fjalla one"
+
+.button
+  background: #000
+  color: #fff
+
+.video
+  aspect-ratio: 16 / 9
+  width: 100%
+
+
+.button:hover
+  background: #ccc
+  color: #000
 
 .navbar > .container
   justify-content: space-between
@@ -24,6 +48,8 @@ h1, h2,  h3, h4
     background-color: #000
   .navbar-item
     align-items: center
+  
+  
 
 .navbar .navbar-menu
   box-shadow: none !important
@@ -108,9 +134,13 @@ h1, h2,  h3, h4
   top: calc(50% + 10px)
 
 .navbar-brand
-  min-height: 6.25rem
+  min-height: 3rem
+  @media screen and (min-width: 1024px) 
+    min-height: 6.25rem
 .navbar-item img  
-  min-height: 2.75rem
+  min-height: 2rem
+  @media screen and (min-width: 1024px) 
+    min-height: 2.75rem
 .navbar-item .icon
   color: #fff
 // Override for use of svg's from https://simpleicons.org/

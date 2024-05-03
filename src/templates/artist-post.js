@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
-import { getImage } from 'gatsby-plugin-image';
-import FullWidthImage from '../components/FullWidthImage';
+import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql, Link } from 'gatsby';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -25,16 +24,15 @@ export const ArtistPostTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} />
       <section className="section">
         {helmet || ''}
         <div className="container content">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-6 is-offset-1">
               <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-                {name} - {voice}
+                {name}
+                <span className="subtitle is-size-5 is-block">{voice}</span>
               </h1>
-              <p>{description}</p>
               <PostContent content={content} />
               {tags && tags.length ? (
                 <div style={{ marginTop: `4rem` }}>
@@ -49,6 +47,13 @@ export const ArtistPostTemplate = ({
                 </div>
               ) : null}
             </div>
+            <div className="column is-4 is-offset-1">
+              <GatsbyImage
+                image={heroImage}
+                alt={title}
+                className="hero-image"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -58,6 +63,7 @@ export const ArtistPostTemplate = ({
 
 ArtistPostTemplate.propTypes = {
   content: PropTypes.node.isRequired,
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   contentComponent: PropTypes.func,
   description: PropTypes.string,
   name: PropTypes.string,
@@ -70,13 +76,31 @@ const ArtistPost = ({ data }) => {
 
   return (
     <Layout>
+      <div
+        className="full-width-image-container margin-top-0"
+        style={{
+          backgroundImage: `url('/img/hero-banner-1.jpg')`,
+        }}
+      >
+        <h1
+          className="has-text-weight-bold is-size-1"
+          style={{
+            boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
+            backgroundColor: '#000',
+            color: 'white',
+            padding: '1rem',
+          }}
+        >
+          Artists
+        </h1>
+      </div>
       <ArtistPostTemplate
         content={post.html}
         contentComponent={HTMLContent}
-        description={post.frontmatter.name}
+        image={post.frontmatter.image}
         helmet={
           <Helmet titleTemplate="%s | Artist">
-            <title>{`${post.frontmatter.name} - ${post.frontmatter.voice}`}</title>
+            <title>{`${post.frontmatter.name}<br />${post.frontmatter.voice}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.name} - ${post.frontmatter.voice}`}
@@ -109,6 +133,11 @@ export const pageQuery = graphql`
         name
         voice
         tags
+        image {
+          childImageSharp {
+            gatsbyImageData(width: 660, quality: 100, layout: CONSTRAINED)
+          }
+        }
       }
     }
   }
