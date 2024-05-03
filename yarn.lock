@@ -4777,7 +4777,7 @@ decap-cms-locales@^3.1.4:
   resolved "https://registry.yarnpkg.com/decap-cms-locales/-/decap-cms-locales-3.1.4.tgz#ee8a437aef0e309e09f104c72a22793bfa2f692b"
   integrity sha512-JenOninZv4qY1nyLKTShYrQ2zdUNkUmRzhYqWbU1a54OJQT/QUS1T3ekNrcwygDX/RHgzsYPxkyOdmaUV2iR6w==
 
-decap-cms-media-library-cloudinary@^3.0.1:
+decap-cms-media-library-cloudinary@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/decap-cms-media-library-cloudinary/-/decap-cms-media-library-cloudinary-3.0.3.tgz#e4f2331086b7c52145c7b51126f74ddd36e99a0e"
   integrity sha512-2dRmHeEiTpFUZaBOvIdCMvZeWGSdC0SyKcVCyU0YpJ7NXdfZg1LoYt5+2xgsbVO2CWH9HjEWw9uKKgCsMKNf9g==
