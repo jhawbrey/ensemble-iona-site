@@ -72,42 +72,36 @@ ConcertRoll.propTypes = {
 export default function ConcertRoll() {
   return (
     <StaticQuery
-      query={graphql`
-        query ConcertRollQuery {
-          allMarkdownRemark(
-            sort: { order: DESC, fields: [frontmatter___date] }
-            filter: { frontmatter: { templateKey: { eq: "concert-post" } } }
-          ) {
-            edges {
-              node {
-                excerpt(pruneLength: 400)
-                id
-                fields {
-                  slug
-                }
-                frontmatter {
-                  date(formatString: "MMMM DD, YYYY")
-                  time
-                  venue
-                  address
-                  title
-                  templateKey
-                  date(formatString: "MMMM DD, YYYY")
-                  featuredimage {
-                    childImageSharp {
-                      gatsbyImageData(
-                        width: 300
-                        quality: 100
-                        layout: CONSTRAINED
-                      )
-                    }
-                  }
-                }
-              }
+      query={graphql`query ConcertRollQuery {
+  allMarkdownRemark(
+    sort: {frontmatter: {date: DESC}}
+    filter: {frontmatter: {templateKey: {eq: "concert-post"}}}
+  ) {
+    edges {
+      node {
+        excerpt(pruneLength: 400)
+        id
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          time
+          venue
+          address
+          title
+          templateKey
+          date(formatString: "MMMM DD, YYYY")
+          featuredimage {
+            childImageSharp {
+              gatsbyImageData(width: 300, quality: 100, layout: CONSTRAINED)
             }
           }
         }
-      `}
+      }
+    }
+  }
+}`}
       render={(data, count) => (
         <ConcertRollTemplate data={data} count={count} />
       )}
