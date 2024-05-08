@@ -32,7 +32,7 @@ const ArtistRollTemplate = (props) => {
                 <div class="column is-8">
                   <h2 className="post-meta">
                     <Link
-                      className="title has-text-primary is-size-4"
+                      className="title has-text-black is-size-4"
                       to={post.fields.slug}
                     >
                       {post.frontmatter.name}
@@ -59,32 +59,38 @@ ArtistRoll.propTypes = {
 export default function ArtistRoll() {
   return (
     <StaticQuery
-      query={graphql`query ArtistRollQuery {
-  allMarkdownRemark(
-    sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {templateKey: {eq: "artist-post"}}}
-  ) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          name
-          voice
-          templateKey
-          featuredimage {
-            childImageSharp {
-              gatsbyImageData(width: 120, quality: 100, layout: CONSTRAINED)
+      query={graphql`
+        query ArtistRollQuery {
+          allMarkdownRemark(
+            sort: { frontmatter: { date: DESC } }
+            filter: { frontmatter: { templateKey: { eq: "artist-post" } } }
+          ) {
+            edges {
+              node {
+                excerpt(pruneLength: 400)
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  name
+                  voice
+                  templateKey
+                  featuredimage {
+                    childImageSharp {
+                      gatsbyImageData(
+                        width: 120
+                        quality: 100
+                        layout: CONSTRAINED
+                      )
+                    }
+                  }
+                }
+              }
             }
           }
         }
-      }
-    }
-  }
-}`}
+      `}
       render={(data, count) => <ArtistRollTemplate data={data} count={count} />}
     />
   );
