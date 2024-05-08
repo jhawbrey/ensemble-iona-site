@@ -27,7 +27,7 @@ export const ConcertPostTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title={title} />
+      <FullWidthImage img={heroImage} title={title} height="400" />
       <section className="section">
         {helmet || ''}
 

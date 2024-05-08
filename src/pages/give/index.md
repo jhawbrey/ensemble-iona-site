@@ -1,6 +1,7 @@
 ---
 templateKey: give-page
 path: /give
+image: /img/hero-banner-2.jpg
 title: Give
 ---
 Interesting in making a financial contribution to Ensemble Iona? Please send an email to give@ensembleiona.org and we would be happy to assist you. 

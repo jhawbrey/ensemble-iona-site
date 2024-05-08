@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import { getImage } from 'gatsby-plugin-image';
+import FullWidthImage from '../components/FullWidthImage';
 import Content, { HTMLContent } from '../components/Content';
 import ArtistRoll from '../components/ArtistRoll';
 
@@ -14,27 +15,11 @@ export const AboutPageTemplate = ({
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
+  const heroImage = getImage(image) || image;
 
   return (
     <div>
-      <div
-        className="full-width-image-container margin-top-0"
-        style={{
-          backgroundImage: `url('/img/hero-banner-2.jpg')`,
-        }}
-      >
-        <h1
-          className="has-text-weight-bold is-size-1"
-          style={{
-            boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
-            backgroundColor: '#000',
-            color: 'white',
-            padding: '1rem',
-          }}
-        >
-          About
-        </h1>
-      </div>
+      <FullWidthImage img={heroImage} title="About" height="400" />
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">
@@ -60,6 +45,7 @@ export const AboutPageTemplate = ({
 };
 
 AboutPageTemplate.propTypes = {
+  image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
@@ -72,6 +58,7 @@ const AboutPage = ({ data }) => {
     <Layout>
       <AboutPageTemplate
         contentComponent={HTMLContent}
+        image={post.frontmatter.image}
         title={post.frontmatter.title}
         content={post.html}
       />
@@ -91,6 +78,11 @@ export const aboutPageQuery = graphql`
       html
       frontmatter {
         title
+        image {
+          childImageSharp {
+            gatsbyImageData(quality: 100, layout: FULL_WIDTH)
+          }
+        }
       }
     }
   }
