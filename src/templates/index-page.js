@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/Layout';
-import ConcertRoll from '../components/ConcertRoll';
+import FeaturedConcert from '../components/FeaturedConcert';
 import FullWidthImage from '../components/FullWidthImage';
 
 // eslint-disable-next-line
@@ -35,11 +35,13 @@ export const IndexPageTemplate = ({
                       <p>{description}</p>
                     </div>
                   </div>
-                  <div className="column is-12">
-                    <h3 className="has-text-weight-semibold is-size-2">
-                      Upcoming Concerts
-                    </h3>
-                    <ConcertRoll />
+                  <div className="columns">
+                    <div className="column is-12">
+                      <h3 className="has-text-weight-semibold is-size-2">
+                        Upcoming Concerts
+                      </h3>
+                      <FeaturedConcert />
+                    </div>
                   </div>
                 </div>
               </div>

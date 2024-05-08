@@ -4,4 +4,4 @@ path: /about
 title: About Iona
 image: /img/iona-singers.jpeg
 ---
-Ensemble Iona is a professional vocal ensemble based in Fort Worth, Texas. This ensemble is comprised of some of the top vocalists in the nation, including GRAMMY® award winning and nominated artists. Ensemble Iona explores programs of diverse repertoire and styles, and has a goal to create engaging programs performed at the highest caliber. Please contact our Executive Director for more information and booking inquiries.
+Ensemble Iona stands as a premier vocal ensemble from the vibrant city of Fort Worth, Texas. Renowned for its unparalleled excellence, this ensemble comprises some of the nation’s top vocalists, featuring GRAMMY® award-winning and nominated artists among its ranks. With a steadfast commitment to musical exploration, Ensemble Iona embarks on captivating journeys through a rich tapestry of repertoire and styles, showcasing its mastery across a diverse spectrum of musical genres. Our mission is to deliver performances of unparalleled quality, characterized by precision, passion, and artistry.
