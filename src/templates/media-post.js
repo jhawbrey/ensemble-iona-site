@@ -69,6 +69,7 @@ const MediaPost = ({ data }) => {
 MediaPost.propTypes = {
   data: PropTypes.shape({
     markdownRemark: PropTypes.object,
+    url: PropTypes.string,
   }),
 };
 

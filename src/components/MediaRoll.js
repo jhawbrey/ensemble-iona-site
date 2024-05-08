@@ -16,7 +16,7 @@ const MediaRollTemplate = (props) => {
               <header>
                 <iframe
                   className="video"
-                  src={post.frontmatter.url}
+                  src={'https://www.youtube.com/embed/' + post.frontmatter.url}
                   title="YouTube video player"
                   frameborder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -42,32 +42,29 @@ MediaRoll.propTypes = {
 export default function MediaRoll() {
   return (
     <StaticQuery
-      query={graphql`query MediaRollQuery {
-  allMarkdownRemark(
-    sort: {frontmatter: {date: DESC}}
-    filter: {frontmatter: {templateKey: {eq: "media-post"}}}
-  ) {
-    edges {
-      node {
-        excerpt(pruneLength: 400)
-        id
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          templateKey
-          date(formatString: "MMMM DD, YYYY")
-          featuredimage {
-            childImageSharp {
-              gatsbyImageData(width: 120, quality: 100, layout: CONSTRAINED)
+      query={graphql`
+        query MediaRollQuery {
+          allMarkdownRemark(
+            sort: { frontmatter: { date: DESC } }
+            filter: { frontmatter: { templateKey: { eq: "media-post" } } }
+          ) {
+            edges {
+              node {
+                excerpt(pruneLength: 400)
+                id
+                fields {
+                  slug
+                }
+                frontmatter {
+                  title
+                  templateKey
+                  url
+                }
+              }
             }
           }
         }
-      }
-    }
-  }
-}`}
+      `}
       render={(data, count) => <MediaRollTemplate data={data} count={count} />}
     />
   );

@@ -59,7 +59,21 @@ collections:
       - { label: Image, name: image, widget: image }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-
+  - name: 'media'
+    label: 'Media'
+    folder: 'src/pages/media'
+    create: true
+    identifier_field: title
+    slug: '{{slug}}'
+    fields:
+      - {
+          label: 'Template Key',
+          name: 'templateKey',
+          widget: 'hidden',
+          default: 'media-post',
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: url, name: url, widget: string }
   - name: 'pages'
     label: 'Pages'
     files:
