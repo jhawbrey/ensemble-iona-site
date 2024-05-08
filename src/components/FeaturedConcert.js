@@ -93,25 +93,14 @@ const Schedule = (props) => {
 
   sortList(pastConcerts, 'descend');
   sortList(concerts, 'ascend');
-
   if (concerts.length === 0) {
     return (
       <div>
-        <h2>Upcoming Concerts</h2>
         <p>Check back soon for upcoming concerts!</p>
-        <h2>Past Concerts</h2>
-        {scheduleList(pastConcerts)}
       </div>
     );
   } else {
-    return (
-      <div>
-        <h2>Upcoming Concerts</h2>
-        {scheduleList(concerts)}
-        <h2>Past Concerts</h2>
-        {scheduleList(pastConcerts)}
-      </div>
-    );
+    return <div>{scheduleList(concerts)}</div>;
   }
 };
 
