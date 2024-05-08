@@ -95,9 +95,11 @@ const Schedule = (props) => {
   sortList(concerts, 'ascend');
   if (concerts.length === 0) {
     return (
-      <div>
-        <p>Check back soon for upcoming concerts!</p>
-      </div>
+      <article class="concert-list-item tile columns is-child box notification">
+        <div class="content">
+          <p>Check back soon for upcoming concerts!</p>
+        </div>
+      </article>
     );
   } else {
     return <div>{scheduleList(concerts)}</div>;

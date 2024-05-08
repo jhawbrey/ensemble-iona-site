@@ -14,4 +14,4 @@ Concord. She has also appeared as a soloist with Bourbon Baroque (Louisville, KY
 
 In addition to her performance work, Alissa is an active teacher and conductor. After six years of teaching middle and high school choirs, she is pursuing her MM in Choral Conducting at Baylor University in Waco, TX, where she lives with her husband Brent and their two cats, Chip and Frankie.
 
-Alissa holds a Bachelor of Music in Education degree from Capital University in her home state of Ohio.
+Alissa holds a Bachelor of Music in Education degree from Capital University in her home state of Ohio. 
