@@ -20,6 +20,7 @@ const Navbar = () => {
           <button
             className={`navbar-burger burger ${isActive && 'is-active'}`}
             aria-expanded={isActive}
+            aria-label="navigation"
             onClick={() => setIsActive(!isActive)}
           >
             <span />

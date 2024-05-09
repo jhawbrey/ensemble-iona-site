@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
-import { Helmet } from 'react-helmet';
-import { GatsbyImage, getImage } from 'gatsby-plugin-image';
-import { graphql, Link } from 'gatsby';
+import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import Content, { HTMLContent } from '../components/Content';
+import { HTMLContent } from '../components/Content';
 
 // eslint-disable-next-line
 export const MediaPostTemplate = ({ content, contentComponent, url }) => {
-  const PostContent = contentComponent || Content;
-
   return (
     <div>
       <section className="section">
@@ -18,6 +13,7 @@ export const MediaPostTemplate = ({ content, contentComponent, url }) => {
           <iframe
             className="video"
             src={url}
+            title={url}
             frameborder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope;"
             allowfullscreen

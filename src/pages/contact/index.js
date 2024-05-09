@@ -64,8 +64,8 @@ export default class Index extends React.Component {
               >
                 <p>
                   For questions about bookings, please contact{' '}
-                  <Link to="mailto:booking@ensembleiona.org">
-                    booking@ensembleiona.org
+                  <Link to="mailto:jordansmith0588@gmail.com">
+                    Jordan Smith
                   </Link>
                   .
                 </p>

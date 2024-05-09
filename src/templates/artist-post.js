@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { kebabCase } from 'lodash';
 import { Helmet } from 'react-helmet';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { graphql, Link } from 'gatsby';
@@ -34,18 +33,6 @@ export const ArtistPostTemplate = ({
                 <span className="subtitle is-size-5 is-block">{voice}</span>
               </h1>
               <PostContent content={content} />
-              {tags && tags.length ? (
-                <div style={{ marginTop: `4rem` }}>
-                  <h4>Tags</h4>
-                  <ul className="taglist">
-                    {tags.map((tag) => (
-                      <li key={tag + `tag`}>
-                        <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ) : null}
             </div>
             <div className="column is-4 is-offset-1">
               <GatsbyImage
@@ -53,6 +40,13 @@ export const ArtistPostTemplate = ({
                 alt={title}
                 className="hero-image"
               />
+            </div>
+          </div>
+          <div className="columns">
+            <div className="column is-12 is-offset-1">
+              <Link className="button" to="/about">
+                Back
+              </Link>
             </div>
           </div>
         </div>

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
 
 import logo from '../img/iona-logo.png';
 import facebook from '../img/social/facebook.svg';
