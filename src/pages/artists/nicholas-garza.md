@@ -1,7 +1,8 @@
 ---
 templateKey: artist-post
 name: Nicholas Garza
-voice: Artistic Director, Countertenor
+voice: Countertenor
+title: Artistic Director
 image: /img/nick-sq.jpg
 featuredimage: /img/nick-sq.jpg
 ---

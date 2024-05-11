@@ -1,7 +1,8 @@
 ---
 templateKey: artist-post
 name: Jordan Smith
-voice: Executive Director
+voice: ""
+title: Executive Director
 image: /img/jordan-sq.jpg
 featuredimage: /img/jordan-sq.jpg
 ---
