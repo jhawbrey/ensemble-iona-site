@@ -31,9 +31,6 @@ export const AboutPageTemplate = ({
                 <PageContent className="content" content={content} />
               </div>
               <div className="section">
-                <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                  Artists
-                </h2>
                 <ArtistRoll />
               </div>
             </div>

@@ -9,83 +9,65 @@ const Schedule = (props) => {
   let concerts = [];
   let pastConcerts = [];
 
-  const sortList = (data, dir) => {
-    data.sort(function (a, b) {
-      if (dir === 'descend') {
-        return (
-          new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)
-        );
-      } else {
-        return (
-          new Date(a.node.frontmatter.date) - new Date(b.node.frontmatter.date)
-        );
-      }
-    });
-  };
-
-  const scheduleList = (data) => {
-    return (
-      <div className="columns is-multiline">
-        {data &&
-          data.map(({ node: post }) => (
-            <div className="is-parent column is-12" key={post.id}>
-              <article
-                className={`concert-list-item tile is-child box notification`}
-              >
-                <header class="columns">
-                  {post?.frontmatter?.featuredimage && (
-                    <div className="is-child column is-4 featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                          width:
-                            post.frontmatter.featuredimage.childImageSharp
-                              .gatsbyImageData.width,
-                          height:
-                            post.frontmatter.featuredimage.childImageSharp
-                              .gatsbyImageData.height,
-                        }}
-                      />
-                    </div>
-                  )}
-                  <div className="is-child column is-8">
-                    <h2 className="post-meta">
-                      <Link
-                        className="title has-text-black is-size-4"
-                        to={post.fields.slug}
-                      >
-                        {post.frontmatter.title}
-                      </Link>
-                      <br />
-                      <span className="subtitle is-size-5 is-block">
-                        {post.frontmatter.date} - {post.frontmatter.time}
-                      </span>
-                    </h2>
-                    <p>
-                      {post.frontmatter.venue}
-                      <br />
-                      {post.frontmatter.address}
-                      <br />
-                      <br />
-                      <Link className="button" to={post.fields.slug}>
-                        More Info →
-                      </Link>
-                    </p>
-                  </div>
-                </header>
-              </article>
-            </div>
-          ))}
-      </div>
+  const sortList = (data, direction) => {
+    data.sort(
+      (a, b) =>
+        new Date(b.node.frontmatter.date) -
+        new Date(a.node.frontmatter.date) * (direction === 'descend' ? -1 : 1)
     );
   };
+
+  const scheduleList = (dataList) => (
+    <div className="columns is-multiline">
+      {dataList.map(({ node: post }) => (
+        <div className="is-parent column is-12" key={post.id}>
+          <article className="concert-list-item tile is-child box notification">
+            <header className="columns">
+              {post.frontmatter.featuredimage && (
+                <div className="column is-4 featured-thumbnail">
+                  <PreviewCompatibleImage
+                    imageInfo={{
+                      image: post.frontmatter.featuredimage,
+                      alt: `featured image thumbnail for post ${post.frontmatter.title}`,
+                    }}
+                  />
+                </div>
+              )}
+              <div className="column is-8">
+                <h2 className="post-meta">
+                  <Link
+                    className="title has-text-black is-size-4"
+                    to={post.fields.slug}
+                  >
+                    {post.frontmatter.title}
+                  </Link>
+                  <br />
+                  <span className="subtitle is-size-5 is-block">
+                    {post.frontmatter.date} - {post.frontmatter.time}
+                  </span>
+                </h2>
+                <p>
+                  {post.frontmatter.venue}
+                  <br />
+                  {post.frontmatter.address}
+                  <br />
+                  <br />
+                  <Link className="button" to={post.fields.slug}>
+                    More Info →
+                  </Link>
+                </p>
+              </div>
+            </header>
+          </article>
+        </div>
+      ))}
+    </div>
+  );
 
   for (var i = 0; i < posts.length; i++) {
     let cDate = new Date(posts[i].node.frontmatter.date);
     const today = new Date();
     if (cDate > today) {
-      console.log(cDate + ' > ' + today);
       concerts.push(posts[i]);
     } else {
       console.log(cDate + ' < ' + today);
@@ -100,8 +82,8 @@ const Schedule = (props) => {
     return (
       <div>
         <h2>Upcoming Concerts</h2>
-        <article class="concert-list-item tile columns is-child box notification">
-          <div class="content">
+        <article className="concert-list-item tile columns is-child box notification">
+          <div className="content">
             <p>Check back soon for upcoming concerts!</p>
           </div>
         </article>

@@ -55,7 +55,8 @@ collections:
           default: 'artist-post',
         }
       - { label: 'Name', name: 'name', widget: 'string' }
-      - { label: 'Voice', name: 'voice', widget: 'string' }
+      - { label: 'Voice', name: 'voice', widget: 'string', required: false }
+      - { label: 'Title', name: 'title', widget: 'string', required: false }
       - { label: Image, name: image, widget: image }
       - { label: 'Featured Image', name: 'featuredimage', widget: image }
       - { label: 'Body', name: 'body', widget: 'markdown' }
