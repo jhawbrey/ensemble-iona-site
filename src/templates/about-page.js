@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import { getImage } from 'gatsby-plugin-image';
 import FullWidthImage from '../components/FullWidthImage';
 import Content, { HTMLContent } from '../components/Content';
 import ArtistRoll from '../components/ArtistRoll';
@@ -15,11 +14,11 @@ export const AboutPageTemplate = ({
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
-  const heroImage = getImage(image) || image;
+  const heroImage = { url: '../img/hero-banner-2.jpg' };
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title="About" height="400" />
+      <FullWidthImage img={heroImage} title="About" height={400} />
       <section className="section section--gradient">
         <div className="container">
           <div className="columns">

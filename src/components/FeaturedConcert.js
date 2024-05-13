@@ -95,8 +95,8 @@ const Schedule = (props) => {
   sortList(concerts, 'ascend');
   if (concerts.length === 0) {
     return (
-      <article class="concert-list-item tile columns is-child box notification">
-        <div class="content">
+      <article className="concert-list-item tile columns is-child box notification">
+        <div className="content">
           <p>Check back soon for upcoming concerts!</p>
         </div>
       </article>

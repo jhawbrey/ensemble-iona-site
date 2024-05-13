@@ -20,7 +20,8 @@ export const IndexPageTemplate = ({
 
   return (
     <div>
-      <FullWidthImage img={heroImage} />
+      <FullWidthImage img={heroImage} height={400} />
+
       <section className="section section--gradient">
         <div className="container">
           <div className="section">

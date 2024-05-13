@@ -1,34 +1,20 @@
 import * as React from 'react';
 import { Link } from 'gatsby';
-
 import Layout from '../../components/Layout';
+import FullWidthImage from '../../components/FullWidthImage';
 import MediaRoll from '../../components/MediaRoll';
+
+const heroImage = { url: '../img/hero-banner-1.jpg' };
 
 export default class MediaPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `url('/img/rehearsal1.jpg')`,
-          }}
-        >
-          <h1
-            className="has-text-weight-bold is-size-1"
-            style={{
-              boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
-              backgroundColor: '#000',
-              color: 'white',
-              padding: '1rem',
-            }}
-          >
-            Media
-          </h1>
-        </div>
+        <FullWidthImage img={heroImage} title="Media" height={400} />
         <section className="section">
           <div className="container">
             <div className="content">
+              <h3 className="has-text-weight-semibold is-size-2">Videos</h3>
               <MediaRoll />
               <article
                 className={`media-list-item tile is-child box notification`}

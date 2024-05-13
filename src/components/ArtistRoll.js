@@ -26,7 +26,7 @@ const ArtistRollTemplate = (props) => {
           <article
             className={`artist-list-item tile is-child box notification`}
           >
-            <header class="columns">
+            <header className="columns">
               {post?.frontmatter?.featuredimage && (
                 <PreviewCompatibleImage
                   imageInfo={{
@@ -41,7 +41,7 @@ const ArtistRollTemplate = (props) => {
                   }}
                 />
               )}
-              <div class="column is-8">
+              <div className="column is-8">
                 <h2 className="post-meta">
                   <Link
                     className="title has-text-black is-size-4"

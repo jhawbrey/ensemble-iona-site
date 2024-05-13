@@ -1,6 +1,6 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 export default function FullWidthImage(props) {
   const {
@@ -8,39 +8,44 @@ export default function FullWidthImage(props) {
     img,
     title,
     subheading,
-    imgPosition = "top left",
+    imgPosition = 'top left',
   } = props;
-
+  console.log(props);
   return (
     <React.Fragment>
       <div
         className="margin-top-0"
         style={{
-          display: "grid",
-          alignItems: "center",
+          display: 'grid',
+          alignItems: 'center',
+          position: 'relative',
         }}
       >
         {img?.url ? (
           <img
-            src={img}
-            objectFit={"cover"}
-            objectPosition={imgPosition}
+            src={img.url}
             style={{
-              gridArea: "1/1",
+              objectFit: 'cover',
+              objectPosition: 3 / 1,
+              layout: 'fullWidth',
+              formats: ['auto', 'webp', 'avif'],
+              gridArea: '1/1',
               // You can set a maximum height for the image, if you wish.
               height: height,
-              width: "100%",
+              width: '100%',
             }}
             // This is a presentational image, so the alt should be an empty string
             alt=""
+            // You can optionally force an aspect ratio for the generated image
+            // This is a presentational image, so the alt should be an empty string
           />
         ) : (
           <GatsbyImage
             image={img}
-            objectFit={"cover"}
+            objectFit={'cover'}
             objectPosition={imgPosition}
             style={{
-              gridArea: "1/1",
+              gridArea: '1/1',
               // You can set a maximum height for the image, if you wish.
               maxHeight: height,
             }}
@@ -49,18 +54,22 @@ export default function FullWidthImage(props) {
             aspectratio={3 / 1}
             // This is a presentational image, so the alt should be an empty string
             alt=""
-            formats={["auto", "webp", "avif"]}
+            formats={['auto', 'webp', 'avif']}
           />
         )}
         {(title || subheading) && (
           <div
             style={{
               // By using the same grid area for both, they are stacked on top of each other
-              gridArea: "1/1",
-              position: "relative",
+              gridArea: '1/1',
+              position: 'absolute',
+              bottom: 0,
               // This centers the other elements inside the hero component
-              placeItems: "center",
-              display: "grid",
+              placeItems: 'center',
+              display: 'grid',
+              justifyItems: 'self-end',
+              opacity: 0.75,
+              width: '100%',
             }}
           >
             {/* Any content here will be centered in the component */}
@@ -68,12 +77,13 @@ export default function FullWidthImage(props) {
               <h1
                 className="has-text-weight-bold is-size-3-mobile is-size-2-tablet is-size-1-widescreen"
                 style={{
-                  boxShadow:
-                    "rgb(0, 0, 0) 0.5rem 0px 0px, rgb(0, 0, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(0, 0, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25em",
+                  boxShadow: '#dcddd7 0.5rem 0px 0px, #dcddd7 -0.5rem 0px 0px',
+                  backgroundColor: '#dcddd7',
+                  color: 'black',
+                  lineHeight: '1',
+                  padding: '0.25em',
+                  width: '100%',
+                  textAlign: 'right',
                 }}
               >
                 {title}
@@ -84,12 +94,12 @@ export default function FullWidthImage(props) {
                 className="has-text-weight-bold is-size-5-mobile is-size-5-tablet is-size-4-widescreen"
                 style={{
                   boxShadow:
-                    "rgb(0, 0, 0) 0.5rem 0px 0px, rgb(0, 0, 0) -0.5rem 0px 0px",
-                  backgroundColor: "rgb(0, 0, 0)",
-                  color: "white",
-                  lineHeight: "1",
-                  padding: "0.25rem",
-                  marginTop: "0.5rem",
+                    'rgb(0, 0, 0) 0.5rem 0px 0px, rgb(0, 0, 0) -0.5rem 0px 0px',
+                  backgroundColor: 'rgb(0, 0, 0)',
+                  color: 'white',
+                  lineHeight: '1',
+                  padding: '0.25rem',
+                  marginTop: '0.5rem',
                 }}
               >
                 {subheading}

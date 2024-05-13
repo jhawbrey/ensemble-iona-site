@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
-import { getImage } from 'gatsby-plugin-image';
 import FullWidthImage from '../components/FullWidthImage';
 import Layout from '../components/Layout';
 import Content, { HTMLContent } from '../components/Content';
@@ -14,11 +13,12 @@ export const GivePageTemplate = ({
   contentComponent,
 }) => {
   const PageContent = contentComponent || Content;
-  const heroImage = getImage(image) || image;
+  const heroImage = { url: '../img/hero-banner-4.jpg' };
 
   return (
     <div>
-      <FullWidthImage img={heroImage} title="Give" height="400" />
+      <FullWidthImage img={heroImage} title="About" height={400} />
+
       <section className="section section--gradient">
         <div className="container">
           <div className="content">
