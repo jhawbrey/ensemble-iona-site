@@ -82,11 +82,13 @@ const Schedule = (props) => {
     return (
       <div>
         <h2>Upcoming Concerts</h2>
-        <article className="concert-list-item tile columns is-child box notification">
-          <div className="content">
-            <p>Check back soon for upcoming concerts!</p>
-          </div>
-        </article>
+        <div className="is-parent column">
+          <article className="concert-list-item tile columns is-child box notification">
+            <header className="columns">
+              <p>Check back soon for upcoming concerts!</p>
+            </header>
+          </article>
+        </div>
         <h2>Past Concerts</h2>
         {scheduleList(pastConcerts)}
       </div>
