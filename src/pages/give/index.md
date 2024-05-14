@@ -4,7 +4,7 @@ path: /give
 image: /img/hero-banner-2.jpg
 title: Give
 ---
-Interesting in making a financial contribution to Ensemble Iona? Please send an email to [Jordan Smith](mailto:jordansmith0588@gmail.com) and we would be happy to assist you. 
+Interested in making a financial contribution to Ensemble Iona? Please send an email to [Jordan Smith](mailto:jordansmith0588@gmail.com) and we would be happy to assist you. 
 
 There are also other ways you can help support our organization:
 
