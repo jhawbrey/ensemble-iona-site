@@ -25,7 +25,6 @@ export default function FullWidthImage(props) {
             src={img.url}
             style={{
               objectFit: 'cover',
-              objectPosition: 3 / 1,
               layout: 'fullWidth',
               formats: ['auto', 'webp', 'avif'],
               gridArea: '1/1',
