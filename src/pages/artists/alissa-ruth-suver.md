@@ -11,4 +11,4 @@ As a choral artist, Alissa can be heard with a variety of professional ensembles
 
 She performs regularly with early music organizations across the country in addition to her collaborations with the wind ensembles at Capital and Baylor Universities, and alongside her performance work, Alissa is an active teacher and conductor. After six years of teaching middle and high school choirs, she is pursuing her MM in Choral Conducting at Baylor University in Waco, TX, where she lives with her husband Brent and their cat Frankie. 
 
-Alissa holds a Bachelor of Music in Education degree from Capital University in her home state of Ohio
+Alissa holds a Bachelor of Music in Education degree from Capital University in her home state of Ohio.
