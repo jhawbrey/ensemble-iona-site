@@ -76,17 +76,34 @@ const ArtistPost = ({ data }) => {
           backgroundImage: `url('/img/hero-banner-1.jpg')`,
         }}
       >
-        <h1
-          className="has-text-weight-bold is-size-1"
+        <div
           style={{
-            boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
-            backgroundColor: '#000',
-            color: 'white',
-            padding: '1rem',
+            gridArea: '1/1',
+            position: 'absolute',
+            bottom: 0,
+            // This centers the other elements inside the hero component
+            placeItems: 'center',
+            display: 'grid',
+            justifyItems: 'self-end',
+            opacity: 0.75,
+            width: '100%',
           }}
         >
-          Artists
-        </h1>
+          <h1
+            className="has-text-weight-bold is-size-1"
+            style={{
+              boxShadow: '#dcddd7 0.5rem 0px 0px, #dcddd7 -0.5rem 0px 0px',
+              backgroundColor: '#dcddd7',
+              color: 'black',
+              lineHeight: '1',
+              padding: '0.25em',
+              width: '100%',
+              textAlign: 'right',
+            }}
+          >
+            Artists
+          </h1>
+        </div>
       </div>
       <ArtistPostTemplate
         content={post.html}

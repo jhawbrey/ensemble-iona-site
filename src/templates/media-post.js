@@ -44,10 +44,13 @@ const MediaPost = ({ data }) => {
         <h1
           className="has-text-weight-bold is-size-1"
           style={{
-            boxShadow: '0.5rem 0 0 #000, -0.5rem 0 0 #000',
-            backgroundColor: '#000',
-            color: 'white',
-            padding: '1rem',
+            boxShadow: '#dcddd7 0.5rem 0px 0px, #dcddd7 -0.5rem 0px 0px',
+            backgroundColor: '#dcddd7',
+            color: 'black',
+            lineHeight: '1',
+            padding: '0.25em',
+            width: '100%',
+            textAlign: 'right',
           }}
         >
           Media
