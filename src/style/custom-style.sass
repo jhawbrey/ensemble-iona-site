@@ -23,7 +23,8 @@ ul#navMenu
 
 
 h1, h2,  h3, h4
-  font-family: "fjalla one"
+  font-family: "fjalla one" !important
+  color: #2b2523
 
 .button
   background: #000
@@ -33,9 +34,20 @@ h1, h2,  h3, h4
   aspect-ratio: 16 / 9
   width: 100%
 
+.title, .subtitle
+  color: #2b2523
+
+.artist-list-item, .concert-list-item, .media-list-item
+  background-color: #fff
+  color: #2b2523
+  
+
+.input
+  background-color: #fff
+  border-color: #fff
 
 .button:hover
-  background: #ccc
+  background: #363636
   color: #000
 
 .navbar > .container
@@ -72,6 +84,9 @@ h1, h2,  h3, h4
     padding: 0 2rem 1rem 0
     margin-bottom: 1.5rem
     margin-top: 0
+
+.content h1, .content h2 , .content h3, .content h4
+  color: #2b2523
 
 // Helper Classes
 .full-width-image-container
