@@ -81,7 +81,7 @@ const Schedule = (props) => {
   if (concerts.length === 0) {
     return (
       <div>
-        <h2>Upcoming Concerts</h2>
+        <h2>Upcoming Events</h2>
         <div className="is-parent column">
           <article className="concert-list-item tile columns is-child box notification">
             <header className="columns">
@@ -89,14 +89,14 @@ const Schedule = (props) => {
             </header>
           </article>
         </div>
-        <h2>Past Concerts</h2>
+        <h2>Past Events</h2>
         {scheduleList(pastConcerts)}
       </div>
     );
   } else {
     return (
       <div>
-        <h2>Upcoming Concerts</h2>
+        <h2>Upcoming Events</h2>
         {scheduleList(concerts)}
         <h2>Past Concerts</h2>
         {scheduleList(pastConcerts)}
