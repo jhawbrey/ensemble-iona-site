@@ -6,8 +6,8 @@ time: 6:30pm
 venue: Keith House
 address: 4814 Edwards Ranch Rd, Fort Worth, TX 76109
 featuredconcert: false
-image: /img/038u4743.jpg
-featuredimage: /img/038u4743.jpg
+image: /img/hero-banner-2.jpg
+featuredimage: /img/038u4763.jpg
 ---
 Join us for the Ensemble Iona Launch Party on Thursday, June 20 at 6:30 pm! The evening will include a performance from some of the Ensemble Iona members, the announcement of the 2024–2025 season, the launch of our website, and mingling with the ensemble members and leadership. We will have a special cocktail made for Ensemble Iona, along with other selected drink options, and hors d'oeuvres! Tickets are $50, and space is limited! Be sure to secure your tickets TODAY!
 
