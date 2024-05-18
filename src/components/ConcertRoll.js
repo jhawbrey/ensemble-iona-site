@@ -70,7 +70,6 @@ const Schedule = (props) => {
     if (cDate > today) {
       concerts.push(posts[i]);
     } else {
-      console.log(cDate + ' < ' + today);
       pastConcerts.push(posts[i]);
     }
   }
