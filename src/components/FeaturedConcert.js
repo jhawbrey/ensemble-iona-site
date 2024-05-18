@@ -83,10 +83,8 @@ const Schedule = (props) => {
     let cDate = new Date(posts[i].node.frontmatter.date);
     const today = new Date();
     if (cDate > today) {
-      console.log(cDate + ' > ' + today);
       concerts.push(posts[i]);
     } else {
-      console.log(cDate + ' < ' + today);
       pastConcerts.push(posts[i]);
     }
   }
