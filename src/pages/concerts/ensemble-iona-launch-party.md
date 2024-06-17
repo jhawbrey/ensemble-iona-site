@@ -1,7 +1,7 @@
 ---
 templateKey: concert-post
 title: Ensemble Iona Launch Party
-date: 2024-06-20T18:30:00.000Z
+date: 2024-08-30T18:30:00.000Z
 time: 6:30pm
 venue: Keith House
 address: 4814 Edwards Ranch Rd, Fort Worth, TX 76109
