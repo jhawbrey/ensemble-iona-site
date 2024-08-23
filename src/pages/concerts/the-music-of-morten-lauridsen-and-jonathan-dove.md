@@ -6,7 +6,7 @@ time: 7:00 PM
 venue: St. Stephen Presbyterian Church
 address: 2700 McPherson Ave, Fort Worth, TX 76109
 featuredconcert: true
-image: /img/rehearsal3.jpg
+image: /img/hero-banner-1.jpg
 featuredimage: /img/iona-singers.jpeg
 tags:
   - 23-24season
