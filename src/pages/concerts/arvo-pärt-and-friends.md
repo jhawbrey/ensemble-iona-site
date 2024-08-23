@@ -9,6 +9,6 @@ featuredconcert: true
 image: /img/hero-banner-5.jpg
 featuredimage: /img/038u4743.jpg
 ---
-Join Ensemble Iona for their season closer as they dive into the Nordic Choral traditions. This concert features the music of Arvo Pärt in celebration of his 90th birthday and other Baltic and Nordic Composers
+Join Ensemble Iona for their season closer as they dive into the Nordic Choral traditions. This concert features the music of Arvo Pärt in celebration of his 90th birthday and other Baltic and Nordic Composers.
 
 $25 suggested donation at the door
