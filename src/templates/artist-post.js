@@ -111,7 +111,7 @@ const ArtistPost = ({ data }) => {
         image={post.frontmatter.image}
         helmet={
           <Helmet titleTemplate="%s | Artist">
-            <title>{`${post.frontmatter.name}<br />${post.frontmatter.voice}`}</title>
+            <title>{`${post.frontmatter.name} - ${post.frontmatter.voice}`}</title>
             <meta
               name="description"
               content={`${post.frontmatter.name} - ${post.frontmatter.voice}`}
