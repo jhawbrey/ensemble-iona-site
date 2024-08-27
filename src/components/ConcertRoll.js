@@ -9,12 +9,18 @@ const Schedule = (props) => {
   let concerts = [];
   let pastConcerts = [];
 
-  const sortList = (data, direction) => {
-    data.sort(
-      (a, b) =>
-        new Date(b.node.frontmatter.date) -
-        new Date(a.node.frontmatter.date) * (direction === 'descend' ? -1 : 1)
-    );
+  const sortList = (data, dir) => {
+    data.sort(function (a, b) {
+      if (dir === 'descend') {
+        return (
+          new Date(b.node.frontmatter.date) - new Date(a.node.frontmatter.date)
+        );
+      } else {
+        return (
+          new Date(a.node.frontmatter.date) - new Date(b.node.frontmatter.date)
+        );
+      }
+    });
   };
 
   const scheduleList = (dataList) => (
