@@ -5,7 +5,7 @@ date: 2025-05-24T19:00:00.000Z
 time: 7:00 pm
 venue: St. Stephen Presbyterian Church
 address: 2700 McPherson Ave, Fort Worth, TX
-featuredconcert: true
+featuredconcert: false
 image: /img/hero-banner-5.jpg
 featuredimage: /img/038u4743.jpg
 ---
