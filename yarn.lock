@@ -9269,7 +9269,7 @@ gatsby-react-router-scroll@^6.14.0:
     "@babel/runtime" "^7.20.13"
     prop-types "^15.8.1"
 
-gatsby-remark-copy-linked-files@^6.14.0:
+gatsby-remark-copy-linked-files@^6.13.2:
   version "6.14.0"
   resolved "https://registry.yarnpkg.com/gatsby-remark-copy-linked-files/-/gatsby-remark-copy-linked-files-6.14.0.tgz#3c97d5312be7cfcdea2b1366ed699bb63e318a02"
   integrity sha512-75s/NvjtgYNiFfThZ8cC6Awy0nP2Nyn5/zLISahIAbRaDfnJm3cTd2R9s+/n+t3y3HXXPwMHskCCLdOJAlGviQ==
@@ -10057,13 +10057,6 @@ has@^1.0.3:
   version "1.0.4"
   resolved "https://registry.npmjs.org/has/-/has-1.0.4.tgz"
   integrity sha512-qdSAmqLF6209RFj4VVItywPMbm3vWylknmB3nvNiUIs72xAimcM8nVYxYr7ncvZq5qzk9MKIZR8ijqD/1QuYjQ==
-
-hasbin@1.2.3:
-  version "1.2.3"
-  resolved "https://registry.npmjs.org/hasbin/-/hasbin-1.2.3.tgz"
-  integrity sha512-CCd8e/w2w28G8DyZvKgiHnQJ/5XXDz6qiUHnthvtag/6T5acUeN5lqq+HMoBqcmgWueWDhiCplrw0Kb1zDACRg==
-  dependencies:
-    async "~1.5"
 
 hash-wasm@^4.11.0:
   version "4.11.0"
@@ -18398,10 +18391,15 @@ utils-merge@1.0.1:
   resolved "https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.1.tgz"
   integrity sha512-pMZTvIkT1d+TFGvDOqodOclx0QWkkgi6Tdoa8gC8ffGAAqz9pzPTZWAybbsHHoED/ztMtkv/VoYTYyShUn81hA==
 
-uuid@11.0.5, uuid@^11.0.3:
+uuid@11.0.5:
   version "11.0.5"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-11.0.5.tgz#07b46bdfa6310c92c3fb3953a8720f170427fc62"
   integrity sha512-508e6IcKLrhxKdBbcA2b4KQZlLVp2+J5UwQ6F7Drckkc5N9ZJwFa4TgWtsww9UG8fGHbm6gbV19TdM5pQ4GaIA==
+
+uuid@^11.1.0:
+  version "11.1.0"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-11.1.0.tgz#9549028be1753bb934fc96e2bca09bb4105ae912"
+  integrity sha512-0/A9rDy9P7cJ+8w1c9WD9V//9Wj15Ce2MPz8Ri6032usz+NfePxx5AcN3bN+r6ZL6jEo066/yNYB3tn4pQEx+A==
 
 uuid@^8.3.2:
   version "8.3.2"
